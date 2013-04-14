@@ -1,0 +1,51 @@
+@mixin init {
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10pt;
+		line-height: normal;
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+
+	h1 {
+		font-size: 200%;
+	}
+
+	h2 {
+		font-size: 150%;
+	}
+
+	h3 {
+		font-size: 125%;
+	}
+}
+
+@mixin fullscreen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@mixin top-corner {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+@mixin border-box {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+@mixin transition($duration, $timing) {
+	transition: all $duration $timing;
+	-moz-transition: all $duration $timing;
+	-webkit-transition: all $duration $timing;
+	-o-transition: all $duration $timing;
+}

@@ -1,0 +1,376 @@
+@import 'frame';
+@import 'addon';
+
+//vars
+$aside_width: 5.37%;
+$aside_zIndex: 10;
+$nav_width: 35.3%;
+$nav_zIndex: -10;
+$document_paddingTop: 50px;
+$nav_topHeight: 60px;
+$border: none;
+
+@mixin black-gradient {
+background: #eaeaea; /* Old browsers */
+background: -moz-linear-gradient(top,  #eaeaea 0%, #c9c9c9 94%, #aaaaaa 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeaea), color-stop(94%,#c9c9c9), color-stop(100%,#aaaaaa)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eaeaea 0%,#c9c9c9 94%,#aaaaaa 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eaeaea 0%,#c9c9c9 94%,#aaaaaa 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eaeaea 0%,#c9c9c9 94%,#aaaaaa 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eaeaea 0%,#c9c9c9 94%,#aaaaaa 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#aaaaaa',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin blue-gradient {
+	background: #35b9dd; /* Old browsers */
+background: -moz-linear-gradient(top, #35b9dd 0%, #38c5ed 94%, #aaaaaa 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#35b9dd), color-stop(94%,#38c5ed), color-stop(100%,#aaaaaa)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #35b9dd 0%,#38c5ed 94%,#aaaaaa 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #35b9dd 0%,#38c5ed 94%,#aaaaaa 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #35b9dd 0%,#38c5ed 94%,#aaaaaa 100%); /* IE10+ */
+background: linear-gradient(to bottom, #35b9dd 0%,#38c5ed 94%,#aaaaaa 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#35b9dd', endColorstr='#aaaaaa',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin orange-gradient {
+	background: #f16521; /* Old browsers */
+background: -moz-linear-gradient(top,  #f16521 0%, #963e15 94%, #aaaaaa 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f16521), color-stop(94%,#963e15), color-stop(100%,#aaaaaa)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f16521 0%,#963e15 94%,#aaaaaa 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f16521 0%,#963e15 94%,#aaaaaa 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f16521 0%,#963e15 94%,#aaaaaa 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f16521 0%,#963e15 94%,#aaaaaa 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16521', endColorstr='#aaaaaa',GradientType=0 ); /* IE6-9 */
+
+}
+
+//main
+@include init;
+
+#wrapper {
+	@include fullscreen;
+}
+
+// ====== page layout ======
+aside {
+	width: $aside_width;
+	@include top-corner;
+	z-index: $aside_zIndex;
+}
+
+nav {
+	width: $aside_width + $nav_width;
+	padding-left: $aside_width;
+	@include border-box;
+	float: left; //nav in bottom layer, absolute layers will be on top. must float for overflow to work
+	z-index: $nav_zIndex;
+}
+
+section {
+	@include fullscreen;
+	@include border-box;
+	padding-left: $aside_width;
+	@include transition(0.8s, ease-out);
+}
+
+// ====== main style ======
+aside {
+	border: $border;
+	background: #efefef;
+	ul {
+		width: 100%;
+		float: left;
+		li {
+			width: 100%;
+			border-top: 1px solid silver;
+			border-bottom: 1px solid silver;
+			@include border-box;
+			float: left;
+			&:hover {
+				background: #D4D4D4;
+			}
+			&:active {
+				background: #ccc;
+			}
+			img {
+				width: 100%;
+				float: left;
+			}
+		}
+		#logoBtn {
+			margin-top: $document_paddingTop;
+		}
+		#studentBtn {
+			margin-top: 125%;
+		}
+		#infoBtn {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			img {
+				width: 70%;
+				margin-left: 15%;
+
+			}
+		}
+	}
+}
+
+nav {
+	border: $border;
+	background: #900 url("http://humberinteractive.com/2013/assets/img/bg.jpg");
+	#nav_container {
+		width: 100%;
+		float: left;
+		padding: $document_paddingTop 2.5% 25px 4%;
+		@include border-box;
+		#nav_top {
+			margin-bottom: 25px;
+			width: 100%;
+			float: left;
+			height: $nav_topHeight;
+			li {
+				width: 14.285%;
+				height: $nav_topHeight;
+				float: left;
+				overflow: hidden;
+				list-style: none;
+				@include transition(0.3s,ease-in-out);
+				//open the first tab
+				.nav_top_item {
+					height: $nav_topHeight;
+					
+					.nav_top_icon {
+						width: 33%;
+						float: left;
+						height: $nav_topHeight;
+						&:active{
+							background: #333;
+						}
+						img {
+							width: 100%;
+							vertical-align: middle;
+							margin-right: 3%;
+						}
+					}
+					p {
+						width: 63%;
+						float: right;
+						text-align: left;
+						color: #000;
+						text-transform:uppercase;
+						font-size: 10pt;
+						font-weight: bold;
+						font-family: 'Noto Sans', sans-serif;
+						line-height: 70px;
+					}
+				}
+			}
+		}
+		.black_line {
+			height: 5px;
+			width: 100%;
+			float: left;
+			padding: 10px 0;
+			.black_stroke {
+				height: 5px;
+				width:100%;
+				float: left;
+				background: #333;
+			}
+		}
+		#nav_main {
+			width: 100%;
+			float: left;
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch; //ios native scrolling
+			@include border-box;
+			li {
+				width: 100%;
+				float: left;
+				position: relative;
+				opacity: 1;
+				margin-bottom: 5px;
+				cursor: pointer;
+				padding: 2% 0;
+				@include transition(0.25s,ease-in-out);
+				color: #333;
+				background: rgba(255,255,255,.4);
+				border-radius:3px;	
+				&:hover {
+				background: rgba(255,255,255,0);
+				color: #000;
+				}
+				p {
+					font-size: 12pt;
+					letter-spacing: -1px;
+					float: left;
+					@include border-box;
+					margin-top: 3%;
+					padding-left: 2%;
+					font-weight: bold;
+					font-family: 'Noto Sans', sans-serif;
+						small {
+							font-size:7pt;
+							font-weight: normal;
+							display: block;
+							color: #777;
+							letter-spacing: 1px;
+						}
+				}
+				img {
+					float: left;
+					height: 50px;
+					margin-left: 2%;
+					border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 5px 0px #333; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+          box-shadow: 0px 0px 5px 0px #333; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+					&:hover {
+
+					}
+				}
+			}
+		}
+	}
+}
+.jeff_fulgar {
+	background: url("../imgs/SC-Jeff_Fulgar.jpg")no-repeat;
+		
+}
+section {
+	.cover-bg {
+		height: 25%;
+		width: 100%;
+		margin-left: 0;
+	}
+	.profile-pic {
+		background: red;
+	}
+	.profile-container {
+		position: absolute;
+		z-index: 11;
+		top:200px;
+		left:0;
+		height:50px;
+		width: 100%;
+			@include black-gradient;
+		.name {
+			position: absolute;
+			z-index: 30;
+			top:0;
+			left:200px;
+			line-height: 50px;
+			font-weight: bold;
+			font-family: 'Noto Sans', sans-serif;
+		}
+		.profile-nav {
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-left:692px;
+			width: 277px;
+			background: #999;
+			li {
+				background: red;
+				float: left;
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				padding: 0 2%;
+				margin-left:1px;
+				@include black-gradient;
+				text-align: center;
+				&:hover {
+					@include orange-gradient;
+				}
+			}
+		}
+	}
+	.section-title {
+		position: absolute;
+		z-index: 99999999999999999;
+		top: 300px;
+		left: 20px;
+		width: 100%;
+		h3.capitalize {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-family: 'Noto Sans', sans-serif;
+			font-size: 12px;
+			display: block;
+			float: left;
+			padding-right: 25%;
+		}
+	}
+
+	.biography {
+		position: absolute;
+		z-index: 99999999999999999;
+		top: 320px;
+		left: 20px;
+		max-width: 340px;
+		height: 335px;
+		border-top: solid 1px silver;
+		padding-top: 2%;
+		width: 100%;
+		float: left;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch; //ios native scrolling
+		@include border-box;
+		font-family: 'Noto Sans', sans-serif;
+		h3 {
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.brdbtm {
+			border-bottom: solid 1px silver;
+			margin-bottom: 2px;
+		}
+		.copy-block {
+			width: 100%;
+			position: relative;
+			a {
+				display: block;
+			margin-bottom: 6px;
+				&:hover {
+					background:red;
+				}
+			}
+			.icon {
+				width:30px;
+				height: 30px;
+				float: left;
+				line-height: 30px;
+			}
+			.copy {
+				margin: -35px 0 0 40px;
+				height: auto;
+				float: left;
+				padding-bottom: 4%;
+			}
+			.link {
+				margin-left: 40px;
+				line-height: 30px;
+			}
+		}
+
+	}
+
+	.selected_works {
+		position: absolute;
+		z-index: 99999999999999999;
+		top: 320px;
+		left: 411px;
+		max-width: 540px;
+		padding-top: 2%;
+		height: 335px;
+		border-top: solid 1px silver;
+		width: 100%;
+		float: left;@include border-box;
+		font-family: 'Noto Sans', sans-serif;
+		img {
+			width: 49.7%;
+		}
+	}
+	
+}
