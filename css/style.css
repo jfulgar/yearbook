@@ -1,10 +1,3 @@
-.AO-revealNav {
-  margin-left: 40.7%;
-  padding-left: 0; }
-
-.AO-revealNavTop {
-  width: 42.855%; }
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10pt;
@@ -55,14 +48,13 @@ section {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  padding-left: 5.37%;
+  margin-left: 5.37%;
   transition: all 0.8s ease-out;
   -moz-transition: all 0.8s ease-out;
   -webkit-transition: all 0.8s ease-out;
   -o-transition: all 0.8s ease-out; }
 
 aside {
-  border: none;
   background: #efefef; }
   aside ul {
     width: 100%;
@@ -95,7 +87,6 @@ aside {
         margin-left: 15%; }
 
 nav {
-  border: none;
   background: #990000 url("http://humberinteractive.com/2013/assets/img/bg.jpg"); }
   nav #nav_container {
     width: 100%;
@@ -107,11 +98,9 @@ nav {
     nav #nav_container #nav_top {
       margin-bottom: 25px;
       width: 100%;
-      float: left;
-      height: 60px; }
+      float: left; }
       nav #nav_container #nav_top li {
         width: 14.285%;
-        height: 60px;
         float: left;
         overflow: hidden;
         list-style: none;
@@ -119,28 +108,25 @@ nav {
         -moz-transition: all 0.3s ease-in-out;
         -webkit-transition: all 0.3s ease-in-out;
         -o-transition: all 0.3s ease-in-out; }
-        nav #nav_container #nav_top li .nav_top_item {
-          height: 60px; }
-          nav #nav_container #nav_top li .nav_top_item .nav_top_icon {
-            width: 33%;
-            float: left;
-            height: 60px; }
-            nav #nav_container #nav_top li .nav_top_item .nav_top_icon:active {
-              background: #333; }
-            nav #nav_container #nav_top li .nav_top_item .nav_top_icon img {
-              width: 100%;
-              vertical-align: middle;
-              margin-right: 3%; }
-          nav #nav_container #nav_top li .nav_top_item p {
-            width: 63%;
-            float: right;
-            text-align: left;
-            color: #000;
-            text-transform: uppercase;
-            font-size: 10pt;
-            font-weight: bold;
-            font-family: 'Noto Sans', sans-serif;
-            line-height: 70px; }
+        nav #nav_container #nav_top li .nav_top_item .nav_top_icon {
+          width: 33%;
+          float: left; }
+          nav #nav_container #nav_top li .nav_top_item .nav_top_icon:active {
+            background: #333; }
+          nav #nav_container #nav_top li .nav_top_item .nav_top_icon img {
+            width: 100%;
+            vertical-align: middle;
+            margin-right: 3%; }
+        nav #nav_container #nav_top li .nav_top_item p {
+          width: 63%;
+          float: right;
+          text-align: left;
+          color: #000;
+          text-transform: uppercase;
+          font-size: 10pt;
+          font-weight: bold;
+          font-family: "Noto Sans", sans-serif;
+          line-height: 70px; }
     nav #nav_container .black_line {
       height: 5px;
       width: 100%;
@@ -187,7 +173,7 @@ nav {
           margin-top: 3%;
           padding-left: 2%;
           font-weight: bold;
-          font-family: 'Noto Sans', sans-serif; }
+          font-family: "Noto Sans", sans-serif; }
           nav #nav_container #nav_main li p small {
             font-size: 7pt;
             font-weight: normal;
@@ -199,9 +185,9 @@ nav {
           height: 50px;
           margin-left: 2%;
           border-radius: 50%;
-          -webkit-box-shadow: 0px 0px 5px 0px #333;
+          -webkit-box-shadow: 0px 0px 5px 0px #333333;
           /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
-          box-shadow: 0px 0px 5px 0px #333;
+          box-shadow: 0px 0px 5px 0px #333333;
           /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */ }
 
 .jeff_fulgar {
@@ -214,7 +200,6 @@ section .cover-bg {
 section .profile-pic {
   background: red; }
 section .profile-container {
-  position: absolute;
   z-index: 11;
   top: 200px;
   left: 0;
@@ -243,7 +228,7 @@ section .profile-container {
     left: 200px;
     line-height: 50px;
     font-weight: bold;
-    font-family: 'Noto Sans', sans-serif; }
+    font-family: "Noto Sans", sans-serif; }
   section .profile-container .profile-nav {
     position: absolute;
     top: 0;
@@ -302,7 +287,7 @@ section .section-title {
   section .section-title h3.capitalize {
     text-transform: uppercase;
     font-weight: bold;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: 12px;
     display: block;
     float: left;
@@ -323,7 +308,7 @@ section .biography {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif; }
+  font-family: "Noto Sans", sans-serif; }
   section .biography h3 {
     font-size: 20px;
     font-weight: bold; }
@@ -365,6 +350,6 @@ section .selected_works {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif; }
+  font-family: "Noto Sans", sans-serif; }
   section .selected_works img {
     width: 49.7%; }

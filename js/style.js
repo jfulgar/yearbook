@@ -20,30 +20,31 @@ $(document).ready(function(e){
 	$("aside, nav").fullHeight();
 	$("#nav_main").customFullHeight();
 	$(".nav_top_item").widthAdjust();
+	$("#nav_top, #nav_top li, .nav_top_item, .nav_top_icon").css({"height": $("#nav_top").width() * 14.285/100 + "px"});
 	window.onresize = function(){
 		$("aside, nav").fullHeight();
 		$("#nav_main").customFullHeight();
 		$(".nav_top_item").widthAdjust();
+		$("#nav_top, #nav_top li, .nav_top_item, .nav_top_icon").css({"height": $("#nav_top").width() * 14.285/100 + "px"});
 	}
 	
 	//reveal nav method
 	var isNavActive = false;
 	function revealNav() {
-		$('section').toggleClass('AO-revealNav');
 		if(!isNavActive){
-			
+			$('section').css({"margin-left":"40.7%"});
 			isNavActive = true;
 		} else {
-			
+			$('section').css({"margin-left":"5.37%"});
 			isNavActive = false;
 		}
 	}
 	function closeNav(){
 		if(isNavActive) {
-			$('section').toggleClass('AO_revealNav');
+			$('section').css({"margin-left":"5.37%"});
 		}
 	}
-	$("aside ul li").on('tap',function(e){
+	$("aside ul li#studentBtn").on('tap',function(e){
 		revealNav();
 		e.stopPropagation();
 	});

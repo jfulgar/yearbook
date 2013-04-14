@@ -54,7 +54,7 @@ function nl2br(text) {
 (function( $ ) {
   $.fn.widthAdjust = function() {
   	
-	this.css({'width': $("#nav_top li").width() * 3 + 'px'});
+	this.css({'width': $("#nav_top").width() * 14.285/100 * 3 + 'px'});
 
 
   };
